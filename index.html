@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-     <script src="https://services8.unblu.com/unblu/js-api/v8/floating/floating-api.min.js"></script>
+    <!-- Include the Unblu Floating API script -->
+    <script src="https://services8.unblu.com/unblu/js-api/v8/floating/floating-api.min.js"></script>
 
-        <script>
-    window.unblu.floating.api.initialize().then(api => {apikey: '1BS1-157Q4O-wF9mHqUXNQ'
-    });
-</script>
-  
+    <script>
+        // Ensure that the Unblu Floating API is properly initialized
+        window.unblu = window.unblu || {}; // Ensure window.unblu is defined
+        window.unblu.floating = window.unblu.floating || {}; // Ensure window.unblu.floating is defined
+
+        window.unblu.floating.api.initialize({
+            apikey: '1BS1-157Q4O-wF9mHqUXNQ' // Correctly set the API key parameter
+        }).then(api => {
+            // The API is initialized, and you can use it here
+            console.log('Unblu API initialized successfully!');
+        }).catch(error => {
+            console.error('Error initializing Unblu API:', error);
+        });
+    </script>
 </head>
 <body>
     <h1>Welcome to the Unblu Chat Service!</h1>
-      <p>How can we help you?</p>
+    <p>How can we help you?</p>
 </body>
 </html>
