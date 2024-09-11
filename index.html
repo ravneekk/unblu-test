@@ -1,15 +1,20 @@
+<!DOCTYPE html>
 <html>
 <head>
-     <script defer type="text/javascript" src="https://services8.unblu.com/unblu/visitor.js?x-unblu-apikey=1BS1-157Q4O-wF9mHqUXNQ"></script>
-     <script>
-    //After the api script has been loaded it may be accessed in the global scope
-    window.unblu.floating.api.initialize().then(api => {
-        // use the api
-    });
-</script>
+    <script src="https://services8.unblu.com/unblu/js-api/v8/floating/floating-api.min.js"></script>
+    <script>
+        window.unblu.floating.api.initialize({
+            apiKey: '1BS1-157Q4O-wF9mHqUXNQ'
+        }).then(api => {
+            console.log('Unblu Floating API initialized successfully');
+            // You can add more initialization logic here if needed
+        }).catch(error => {
+            console.error('Failed to initialize Unblu Floating API:', error);
+        });
+    </script>
 </head>
 <body>
     <h1>Welcome to the Unblu Chat Service!</h1>
-      <p>How can we help you?</p>
+    <p>How can we help you?</p>
 </body>
 </html>
